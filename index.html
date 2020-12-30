@@ -1,15 +1,60 @@
-<!DOCTYPE html>
-	<html>
-	<head>
-		<title>Callbacks</title>
-		<link rel="stylesheet" type="text/css" href="css/estilos.css">
-	</head>
-	<body>
+<script src="js/callbacks.js"></script>
+<script>
+    // Funciones callback
 
-		<h1>Proyecto empresarial</h1>
-		<p>Parrafo agregado</1>
 
-		<script src="js/callbacks.js"></script>
-	
-	</body>
-	</html>
+    function saludar(name, callback) {
+        callback(name);
+    }
+
+    const saludo = function(name) {
+        console.log('Hola', name);
+    }
+
+    //saludar('carlos Medina', saludo);
+
+    /*
+    	sumar 2 numeros
+    	El resultado elevarlo al cuadrado
+    	El resultado dividirlo entre 2,
+    	El resultado sustraerle 100,
+    	El resultado, validar si es mayor a 0
+    */
+
+    function sumar(num1, num2, callback) {
+        callback(num1 + num2);
+    }
+
+
+    function cuadrado(num, callback) {
+        callback(num * num);
+    }
+
+    function dividir(num, callback) {
+        callback(num / 2);
+    }
+
+    function sustraer(num, callback) {
+        callback(num - 100);
+    }
+
+    function esMayorCero(num, callback) {
+        if (num > 0) {
+            callback('Mayor a 0');
+        } else {
+            callback('Menor o igual a 0');
+        }
+    }
+
+
+
+
+    sumar(10, 15, callbackSumar);
+
+    // CALLBACK HELL
+    /*
+    1 - Definir las funciones apartes, y en lugar de pasar la funcion anónima pasamos el
+    nombre de la función definida.
+    2 -Modularizar.
+    */
+</script>

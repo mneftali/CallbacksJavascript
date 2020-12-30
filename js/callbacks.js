@@ -1,37 +1,26 @@
-// Funciones callback
-
-
-function saludar(name, callback){
-	callback(name);
+function callbackSumar(resultadoSumar) {
+    console.log('Suma de 2 numeros: ', resultadoSumar);
+    cuadrado(resultadoSumar, callbackCuadrado);
 }
 
-const saludo = function (name){
-	console.log('Hola', name);
+function callbackCuadrado(resultadoCuadrado) {
+    console.log('cuadrado de la suma: ', resultadoCuadrado);
+    dividir(resultadoCuadrado, callbackDividir);
+
 }
 
-//saludar('carlos Medina', saludo);
+function callbackDividir(resultadoDividir) {
+    console.log('Division entre 2: ', resultadoDividir);
+    sustraer(resultadoDividir, callbackSustraer);
+}
 
-/*
-	sumar 2 numeros
-	El resultado elevarlo al cuadrado
-	El resultado dividirlo entre 2,
-	El resultado sustraerle 100,
-	El resultado, validar si es mayor a 0
-*/
+function callbackSustraer(resultadoSustraer) {
+    console.log('Sustraer 100: ', resultadoSustraer);
+    esMayorCero(resultadoSustraer, callbackResultadoFinal);
 
-	function sumar(num1, num2, callback){
-		callback(num1 + num2);
-	}
+}
 
+function callbackResultadoFinal(resultadoFinal) {
+    console.log(resultadoFinal);
 
-	function cuadrado(num, callback){
-		callback(num*num);
-	}
-
-	sumar(8,5,function(resultadoSumar){
-		console.log('Suma de 2 numeros: ', resultadoSumar);
-		
-		cuadrado(resultadoSumar,function(resultadoCuadrado){
-			console.log('cuadrado de la suma: ', resultadoCuadrado)
-		})
-	})
+}
